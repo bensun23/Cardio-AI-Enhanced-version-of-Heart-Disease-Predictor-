@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-md border border-white/60 shadow-xl transition-all duration-500;
+  }
+  
+  .dark .glass-panel {
+    @apply bg-slate-900/40 border-white/10 shadow-black/40;
+  }
+  
+  .glass-input {
+    @apply bg-white/50 backdrop-blur-sm border border-white/50 focus:border-red-400 focus:ring-2 focus:ring-red-200 focus:outline-none transition-all duration-300;
+  }
+
+  .dark .glass-input {
+    @apply bg-slate-800/50 border-white/10 text-slate-100 focus:border-red-500 focus:ring-red-500/30;
+  }
+
+  .section-glow {
+    @apply transition-all duration-500;
+  }
+
+  .section-glow:hover {
+    @apply shadow-[0_0_25px_rgba(220,38,38,0.25)] border-red-500/30;
+  }
+
+  .dark .section-glow:hover {
+    @apply shadow-[0_0_35px_rgba(220,38,38,0.35)] border-red-500/50;
+  }
+
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+  @apply transition-colors duration-500;
+}
+
+body.dark {
+  background-color: #020617;
+}
+
+/* Custom slider thumb styling */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #dc2626;
+  cursor: pointer;
+  margin-top: -6px;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+}
+
+.dark input[type=range]::-webkit-slider-thumb {
+  background: #ef4444;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+}
+
+.dark input[type=range]::-webkit-slider-runnable-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-scan {
+  animation: scan 2s linear infinite;
+}

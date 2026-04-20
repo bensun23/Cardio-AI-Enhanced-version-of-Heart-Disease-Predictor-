@@ -4,4 +4,6 @@ joblib
 jupyter
 fastapi
 uvicorn
+fpdf2
+
 

@@ -81,6 +81,36 @@ function App() {
     }
   };
 
+  const handleDownloadReport = async () => {
+    try {
+      const response = await fetch('/generate-report', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          patient: formData,
+          probability: prediction.probability,
+          risk_level: prediction.risk_level
+        })
+      });
+      
+      if (!response.ok) throw new Error('Failed to generate report');
+      
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `CardioAI_Report_${formData.age}y_${prediction.risk_level}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    } catch (err) {
+      console.error(err);
+      alert('Failed to download report: ' + err.message);
+    }
+  };
+
+
   return (
     <div className={`min-h-screen relative overflow-hidden transition-colors duration-500 bg-gradient-to-br ${darkMode ? 'from-slate-900 to-slate-950 text-slate-100' : 'from-slate-50 to-slate-200 text-slate-800'} font-sans`}>
       
@@ -324,9 +354,10 @@ function App() {
                   <button onClick={() => setStep('form')} className={`flex-1 py-3 ${darkMode ? 'bg-slate-800 hover:bg-slate-700 text-slate-200' : 'bg-white/60 hover:bg-white text-slate-700'} font-medium rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm`}>
                     <RefreshCw size={16} /> Re-evaluate
                   </button>
-                  <button className="flex-1 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-xl flex items-center justify-center gap-2 shadow-md transition-all shadow-red-500/20">
+                  <button onClick={handleDownloadReport} className="flex-1 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-xl flex items-center justify-center gap-2 shadow-md transition-all shadow-red-500/20">
                     <Download size={16} /> Report
                   </button>
+
                 </div>
               </div>
             </div>

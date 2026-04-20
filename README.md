@@ -191,8 +191,10 @@ Submit patient clinical data for analysis.
 ---
 
 ## 👨‍💻 Author
-**Keerthana**  
-*AI/ML Full-Stack Developer*
+## 👨‍💻 Author
+**Bensun**  
+
+
 
 ---
 *Disclaimer: This tool is for educational purposes only and should not be used as a replacement for professional medical advice.*

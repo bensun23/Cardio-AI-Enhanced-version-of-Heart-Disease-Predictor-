@@ -1,0 +1,24 @@
+[build]
+  base = "frontend"
+  command = "npm ci && npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "../netlify/functions"
+
+[[redirects]]
+  from = "/predict"
+  to = "/.netlify/functions/predict"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/generate-report"
+  to = "/.netlify/functions/generate-report"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

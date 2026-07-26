@@ -6,13 +6,24 @@
 ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
+<p align="center">
+  <a href="https://agent-6a489c9a9354c99c46--heartdiseasepredict-ai.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀%20Launch%20Live%20Demo-CardioAI-red?style=for-the-badge" alt="Live Demo">
+  </a>
+</p>
+
+<p align="center">
+  <b>🌐 Live Demo:</b><br>
+  https://agent-6a489c9a9354c99c46--heartdiseasepredict-ai.netlify.app/
+</p>
+
 > **AI-powered cardiovascular risk analysis at your fingertips.** Leveraging Machine Learning to provide fast, precise, and secure heart disease risk assessments.
 
 ---
 
 ## 🎯 Project Overview
 
-CardioAI is an end-to-end healthcare web application designed to predict the probability of heart disease in patients. By analyzing **13 core clinical parameters**, the system provides a comprehensive risk assessment (Low, Moderate, or High) backed by a production-grade Random Forest model. 
+CardioAI is an end-to-end healthcare web application designed to predict the probability of heart disease in patients. By analyzing **13 core clinical parameters**, the system provides a comprehensive risk assessment (Low, Moderate, or High) backed by a production-grade Random Forest model.
 
 The application is built for performance, security, and exceptional user experience, featuring a modern **Glassmorphism UI** with full **Dark Mode** support and interactive data visualizations.
 
@@ -105,6 +116,7 @@ graph LR
 ## 🚀 Installation & Setup
 
 ### 1. Backend Setup
+
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/heart-disease-predictor.git
@@ -116,19 +128,21 @@ pip install -r requirements.txt
 # Run the API
 python app.py
 ```
+
 *API will be available at `http://localhost:8000`*
 
 ### 2. Frontend Setup
+
 ```bash
 cd frontend
 
 # Install dependencies
 npm install
 
-# Run the dev server
+# Run the development server
 npm run dev
 
-# Or build for production
+# Build for production
 npm run build
 ```
 
@@ -137,9 +151,11 @@ npm run build
 ## 🔌 API Documentation
 
 ### POST `/predict`
+
 Submit patient clinical data for analysis.
 
-**Request Body:**
+**Request Body**
+
 ```json
 {
   "age": 52,
@@ -158,7 +174,8 @@ Submit patient clinical data for analysis.
 }
 ```
 
-**Response Body:**
+**Response Body**
+
 ```json
 {
   "probability": 0.82,
@@ -169,32 +186,35 @@ Submit patient clinical data for analysis.
 ---
 
 ## 🔮 Future Improvements
+
 - [ ] **Explainability**: Integrate actual SHAP values for clinical-level explainable AI.
 - [ ] **Data Export**: Generate downloadable PDF medical reports.
-- [ ] **Security**: Implementation of OAuth2 authentication for patient data protection.
-- [ ] **Deployment**: One-click deployment script for AWS/Heroku/Vercel.
+- [ ] **Security**: Implement OAuth2 authentication for patient data protection.
+- [ ] **Deployment**: One-click deployment for AWS, Azure, or Docker.
 
 ---
 
 ## 🏥 Use Cases
+
 - **Early Detection**: Assisting individuals in identifying potential risks early.
-- **Medical Education**: Demonstrating how clinical factors influence cardiovascular health probabilities.
-- **Healthcare Awareness**: Promoting consistent monitoring of blood pressure and cholesterol.
+- **Medical Education**: Demonstrating how clinical factors influence cardiovascular health.
+- **Healthcare Awareness**: Promoting regular monitoring of heart health.
 
 ---
 
 ## 💡 Learning Outcomes
-- **Full-stack Orchestration**: Connecting a high-performance Python backend with a modern React frontend.
-- **Model Deployment**: Moving from a Jupyter Notebook research environment to a production REST API.
-- **UX for AI**: Designing interfaces that make machine learning predictions intuitive and non-threatening.
+
+- **Full-stack Development**: Integrated a React frontend with a FastAPI backend.
+- **Machine Learning Deployment**: Served a trained Random Forest model through a production-ready REST API.
+- **Modern UI/UX**: Built a responsive Glassmorphism interface with Dark Mode.
+- **REST API Design**: Implemented secure API communication between frontend and backend.
 
 ---
-
 
 ## 👨‍💻 Author
-**Bensun**  
 
-
+**Bensun**
 
 ---
-*Disclaimer: This tool is for educational purposes only and should not be used as a replacement for professional medical advice.*
+
+> **Disclaimer:** This project is intended for educational and demonstration purposes only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment.
